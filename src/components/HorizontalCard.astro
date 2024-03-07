@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, technologies, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
@@ -26,6 +26,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
+
         <p class="py-1 text-1xl">{desc}</p>
         <div class="card-actions justify-end">
           {
@@ -37,6 +38,19 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
               ))
           }
         </div>
+
+        <div class="flex flex-wrap gap-2" style="margin-top: 5px">
+          {
+            technologies.map((tech) => (
+                <div
+                  class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-white uppercase bg-blue-500 rounded-md select-none whitespace-nowrap"
+                  style="max-width: calc(100% - 4px);">
+                  <span class="">{tech}</span>
+                </div>
+            ))
+          }
+        </div>
+
       </div>
     </div>
   </a>

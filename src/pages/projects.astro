@@ -5,47 +5,36 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 <BaseLayout title = "Projects" sideBarActiveItemID="projects">
   <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5">Android Nativo</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="TripOut"
+    img="/TripOut_mockup.webp"
+    desc="Una aplicación para viajeros que te permite planificar tus viajes."
+    url="https://github.com/MartinAlbanesi/TripOut"
     badge="NEW"
+    technologies={["Kotlin", "Android", "Jetpack Compose", "Android Studio"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="Game App"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Un Quiz Game sobre juegos gratuitos para Android."
+    url="https://github.com/MartinAlbanesi/GameApp"
+    technologies={["Kotlin", "XML", "Android Studio"]}
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Multiplataforma (Android - IOS)</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Pokedex App"
+    img="/Pokedex_mockup.webp"
+    desc="La clásica Pokedex de Pokemon, pero en tu celular y desarrollada con Kotlin Multiplatform."
+    url="https://github.com/MartinAlbanesi/Pokedex"
+    badge="Multiplatform"
+    technologies={["Kotlin Multiplatform", "Jetpack Compose", "Android Studio"]}
   />
 </BaseLayout>

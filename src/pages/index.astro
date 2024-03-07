@@ -7,6 +7,7 @@ import createSlug from "../lib/createSlug"
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
+
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -41,23 +42,26 @@ const last_posts = posts.slice(0, 3);
     title="TripOut"
     img="/TripOut_mockup.webp"
     desc="Una aplicación para viajeros que te permite planificar tus viajes."
-    url="#"
+    url="https://github.com/MartinAlbanesi/TripOut"
     badge="NEW"
+    technologies={["Kotlin", "Android", "Jetpack Compose", "Google Maps", "Android Studio"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Pokedex App"
     img="/Pokedex_mockup.webp"
     desc="La clásica Pokedex de Pokemon, pero en tu celular y desarrollada con Kotlin Multiplatform."
-    url="#"
+    url="https://github.com/MartinAlbanesi/Pokedex"
     badge="Multiplatform"
+    technologies={["Kotlin Multiplatform", "Jetpack Compose", "PokéAPI", "Android Studio"]}
   />
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Game App"
     img="/post_img.webp"
     desc="Un Quiz Game sobre juegos gratuitos para Android."
-    url="#"
+    url="https://github.com/MartinAlbanesi/GameApp"
+    technologies={["Kotlin", "XML", "Android Studio"]}
   />
 
 <!--
