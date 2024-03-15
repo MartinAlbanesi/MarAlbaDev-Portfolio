@@ -2,67 +2,87 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 const last_posts = posts.slice(0, 3);
-
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hola 👋</div>
-    <div class="text-5xl font-bold">Soy Martín Albanesi</div>
-    <div class="text-3xl py-3 font-bold">Desarrollador Android</div>
-    <div class="py-2">
-      <text class="text-lg">
-        <b>Desarrollador Android</b> capaz de programar de manera rápida y precisa. 
-        Soy una persona proactiva, creativa, responsable y organizada en mi 
-        trabajo. Siempre tengo la mejor disposición para el aprendizaje de 
-        nuevos conceptos. Busco un puesto de trabajo desafiante 
-        con alto nivel de crecimiento. 
-      </text>
+  <section class="flex justify-center items-center">
+    <div class="content flex pb-12 mt-5 .h-screen max-w-screen-xl mx-auto">
+      <div class="item-body flex flex-col justify-center">
+        <div>
+          <div class="text-4xl md:text-6xl py-1">Hola 👋</div>
+          <div class="text-5xl md:text-7xl font-bold">Soy Martín Albanesi</div>
+          <div class="text-3xl md:text-5xl py-3 font-bold">Desarrollador Android</div>
+          <div class="py-2">
+            <text class="text-lg md:text-xl">
+              Soy un apasionado por la programación con 2 años de experiencia en el <br>
+              desarrollo de software. Estoy cursando el último año de la tecnicatura en <br> 
+              Desarrollo de Aplicaciones Móviles.
+            </text>
+          </div>
+          <div class="mt-8">
+            <a class="btn" href="#" target="_blank"> Conoceme más!</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Conoceme más!</a>
-      <!-- 
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
-      -->
+    <img src="/public/degradado4.png" alt="Martín Albanesi" class="right-0 top-0 h-screen"/>
+  </section>
+
+  <section  class="flex items-center">
+    <div>
+
+    <div class="text-3xl md:text-5xl py-3 font-bold">
+      Mis últimos proyectos {"</>"}
     </div>
-  </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">Mis últimos proyectos {"</>"}</div>
-  </div>
+    <HorizontalCard
+      title="TripOut"
+      img="/TripOut_mockup.webp"
+      desc="Una aplicación para viajeros que te permite planificar tus viajes."
+      url="https://github.com/MartinAlbanesi/TripOut"
+      badge="NEW"
+      technologies={[
+        "Kotlin",
+        "Android",
+        "Jetpack Compose",
+        "Google Maps",
+        "Android Studio",
+      ]}
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Pokedex App"
+      img="/Pokedex_mockup.webp"
+      desc="La clásica Pokedex de Pokemon, pero en tu celular y desarrollada con Kotlin Multiplatform."
+      url="https://github.com/MartinAlbanesi/Pokedex"
+      badge="Multiplatform"
+      technologies={[
+        "Kotlin Multiplatform",
+        "Jetpack Compose",
+        "PokéAPI",
+        "Android Studio",
+      ]}
+    />
+    <div class="divider my-0"></div>
+    <HorizontalCard
+      title="Game App"
+      img="/GameApp_mockup.png"
+      desc="Un Quiz Game sobre juegos gratuitos para Android."
+      url="https://github.com/MartinAlbanesi/GameApp"
+      technologies={["Kotlin", "XML", "Android Studio"]}
+    />
 
-  <HorizontalCard
-    title="TripOut"
-    img="/TripOut_mockup.webp"
-    desc="Una aplicación para viajeros que te permite planificar tus viajes."
-    url="https://github.com/MartinAlbanesi/TripOut"
-    badge="NEW"
-    technologies={["Kotlin", "Android", "Jetpack Compose", "Google Maps", "Android Studio"]}
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Pokedex App"
-    img="/Pokedex_mockup.webp"
-    desc="La clásica Pokedex de Pokemon, pero en tu celular y desarrollada con Kotlin Multiplatform."
-    url="https://github.com/MartinAlbanesi/Pokedex"
-    badge="Multiplatform"
-    technologies={["Kotlin Multiplatform", "Jetpack Compose", "PokéAPI", "Android Studio"]}
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Game App"
-    img="/post_img.webp"
-    desc="Un Quiz Game sobre juegos gratuitos para Android."
-    url="https://github.com/MartinAlbanesi/GameApp"
-    technologies={["Kotlin", "XML", "Android Studio"]}
-  />
+  </div>
+  </section>
+</BaseLayout>
+
 
 <!--
   <div>
@@ -85,4 +105,3 @@ const last_posts = posts.slice(0, 3);
     ))
   }
  -->
-</BaseLayout>
